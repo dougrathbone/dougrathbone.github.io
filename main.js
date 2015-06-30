@@ -27,7 +27,7 @@ function MetricsFlagger (){
 				this.logMessage("Found element '"+this.widgetIdList[x]+"'");
 				continue;
 			}
-			this.logMessage("Found widget container "+widgetContainer);
+			this.logMessage("Found widget container "+widgetContainer.id);
 			widgetList.push(widgetContainer);
 		}
 		return widgetList;
@@ -42,7 +42,9 @@ function MetricsFlagger (){
 		
 		var flagIcon = document.createElement("img");
 		flagIcon.src = this.flagiconSrc;
-		flagIcon.style="position:absolute; top:"+(top+10)+"px;left:"+rightCorner-10+"px;";
+		flagIcon.style.position = "absolute";
+		flagIcon.style.top = top+10+"px";
+		flagIcon.style.left = rightCorner-10+"px";
 		
 		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
