@@ -1,2 +1,2 @@
 .flagIcon {}
-.flagIcon:hover {content: url('https://s3-us-west-2.amazonaws.com/edp-icons/not-flagged-hover.png');}
+.flagIcon:hover {cursor: pointer;content: url('https://s3-us-west-2.amazonaws.com/edp-icons/not-flagged-hover.png');}
