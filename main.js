@@ -9,6 +9,7 @@ function MetricsFlagger (){
 		}
 		
 		var widgets = this.findWidgets();
+		this.logMessage("attempting to fetch "+widgets.length+" widgets");
 		for (var x = 0; x<widgets.length;x++){
 			this.logMessage("attaching to widget " + widgets[x]);
 			this.attachFlag(widgets[x]);
@@ -24,8 +25,10 @@ function MetricsFlagger (){
 			var widgetContainer = document.getElementById(this.widgetIdList[x]);
 			if (typeof widgetContainer == 'undefined'){
 				this.logMessage("Found element '"+this.widgetIdList[x]+"'");
-				widgetList.push(widgetContainer);
+				continue;
 			}
+			this.logMessage("Found widget container "+widgetContainer);
+			widgetList.push(widgetContainer);
 		}
 		return widgetList;
 	}
