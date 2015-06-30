@@ -80,7 +80,9 @@ $("#flagDialog").dialog({  //create dialog, but keep it closed
 	height: 300,
 	width: 350,
 	modal: true,
-	title: "Flag metric for review"
+	title: "Flag metric for review",
+	resizable: false,
+	draggable: false
 });
 
 function showDialog(){  //load content and open dialog
