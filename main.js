@@ -25,7 +25,7 @@ function MetricsFlagger (){
 		//load dialog injection div
 		var dialogContainer = document.createElement("div");
 		dialogContainer.setAttribute("id","flagDialog");
-		var body = document.getElementByTagName("body")[0];
+		var body = document.getElementsByTagName("body")[0];
 		body.appendChild(dialogContainer);
 	}
 	
