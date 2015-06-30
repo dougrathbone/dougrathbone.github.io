@@ -1,6 +1,6 @@
 function MetricsFlagger (){
 	this.loaded = false;
-	this.widgetIdList = ['Scorecard','odr','rcmd'];
+	this.widgetIdList = ['Scorecard','odr','rcmd','contactResponseMetrics','otds'];
 	this.flagiconSrc = "https://s3-us-west-2.amazonaws.com/edp-icons/not-flagged.png";
 	
 	this.loadFlags = function(){
@@ -17,7 +17,6 @@ function MetricsFlagger (){
 		head.appendChild(link);
 		
 		var widgets = this.findWidgets();
-		this.logMessage("attempting to fetch "+widgets.length+" widgets");
 		for (var x = 0; x<widgets.length;x++){
 			this.attachFlag(widgets[x]);
 		}
@@ -37,7 +36,7 @@ function MetricsFlagger (){
 			// try and pull the contain from the current DOM
 			var widgetContainer = document.getElementById(this.widgetIdList[x]);
 			if (widgetContainer == null){
-				this.logMessage("Found element '"+this.widgetIdList[x]+"'");
+				this.logMessage("Didnt locate element '"+this.widgetIdList[x]+"'");
 				continue;
 			}
 			this.logMessage("Found widget container "+widgetContainer.id);
@@ -47,7 +46,7 @@ function MetricsFlagger (){
 	}
 	
 	this.attachFlag = function(containerDomElement){
-		this.logMessage("attaching to dom element: " +containerDomElement.id);
+		this.logMessage("attaching to flag dom element: " +containerDomElement.id);
 		
 		var top = containerDomElement.offsetTop;
 		var rightCorner = containerDomElement.offsetLeft + containerDomElement.offsetWidth;
