@@ -24,7 +24,7 @@ function MetricsFlagger (){
 			// try and pull the contain from the current DOM
 			var widgetContainer = document.getElementById(this.widgetIdList[x]);
 			console.log(widgetContainer);
-			if (typeof widgetContainer == 'undefined'){
+			if (widgetContainer == null){
 				this.logMessage("Found element '"+this.widgetIdList[x]+"'");
 				continue;
 			}
