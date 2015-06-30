@@ -1,11 +1,12 @@
-alert("hello");
-
 function MetricsFlagger (){
 	var loaded =false;
 	var widgetIdList = ['Scorecard','odr','rcmd'];
 	
 	this.loadFlags = function(){
-		if (loaded) return;
+		if (loaded) {
+			this.logMessage("skipping load, as already loaded");
+			return;
+		}
 		
 		var widgets = this.findWidgets();
 		for (var x = 0; x<widgets.length;x++){
@@ -34,7 +35,8 @@ function MetricsFlagger (){
 	}
 	
 	this.logMessage = function(message){
-		if (!console) return;
+		if (typeof console == "object") return;
+		
 		console.log(message);
 	}
 }
