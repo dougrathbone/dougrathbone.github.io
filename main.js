@@ -37,7 +37,7 @@ function MetricsFlagger (){
 		this.logMessage("attaching to dom element: " +containerDomElement.id);
 		
 		var top = containerDomElement.offsetTop;
-		var rightCorner = containDomElement.offsetLeft + containerDomElement.offsetWidth;
+		var rightCorner = containerDomElement.offsetLeft + containerDomElement.offsetWidth;
 		this.logMessage("element is at top: "+top+" and right: "+rightCorner);
 		
 		var flagIcon = document.createElement("img");
