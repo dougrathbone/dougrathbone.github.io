@@ -59,6 +59,7 @@ function MetricsFlagger (){
 		flagIcon.style.top = top+10+"px";
 		flagIcon.style.left = rightCorner-22+"px";
 		flagIcon.className="flagIcon";
+		flagIcon.addEventListener("click", showDialog;
 		
 		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
@@ -82,7 +83,7 @@ $("#flagDialog").dialog({  //create dialog, but keep it closed
 	modal: true
 });
 
-function showDialog(url){  //load content and open dialog
+function showDialog(){  //load content and open dialog
 	var flagModalUrl = "https://dougrathbone.github.io/flagdialog.htm";
 	$("#flagDialog").load(flagModalUrl);
 	$("#flagDialog").dialog("open");         
