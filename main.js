@@ -59,7 +59,7 @@ function MetricsFlagger (){
 		flagIcon.style.top = top+10+"px";
 		flagIcon.style.left = rightCorner-22+"px";
 		flagIcon.className="flagIcon";
-		flagIcon.addEventListener("click", showDialog;
+		flagIcon.addEventListener("click", showDialog);
 		
 		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
