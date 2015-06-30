@@ -9,6 +9,13 @@ function MetricsFlagger (){
 			return;
 		}
 		
+		this.logMessage("loading css");
+		var link = document.createElement("link");
+		link.setAttribute("rel","stylesheet");
+		link.setAttribute("href","https://dougrathbone.github.io/flagger.css");
+		var head = document.getElementsByTagName("head")[0];
+		head.appendChild(link);
+		
 		var widgets = this.findWidgets();
 		this.logMessage("attempting to fetch "+widgets.length+" widgets");
 		for (var x = 0; x<widgets.length;x++){
@@ -45,6 +52,7 @@ function MetricsFlagger (){
 		flagIcon.style.position = "absolute";
 		flagIcon.style.top = top+10+"px";
 		flagIcon.style.left = rightCorner-22+"px";
+		flagIcon.className="flagIcon";
 		
 		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
