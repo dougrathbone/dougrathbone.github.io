@@ -42,7 +42,7 @@ function MetricsFlagger (){
 		
 		var flagIcon = document.createElement("img");
 		flagIcon.src = this.flagiconSrc;
-		flagIcon.style="position:absolute; top:"+(top+10)+"px;left:"+rightcorner-10+"px;";
+		flagIcon.style="position:absolute; top:"+(top+10)+"px;left:"+rightCorner-10+"px;";
 		
 		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
