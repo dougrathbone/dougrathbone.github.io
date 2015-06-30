@@ -11,7 +11,7 @@ function MetricsFlagger (){
 		var widgets = this.findWidgets();
 		this.logMessage("attempting to fetch "+widgets.length+" widgets");
 		for (var x = 0; x<widgets.length;x++){
-			this.logMessage("attaching to widget " + widgets[x]);
+			this.logMessage("attaching to widget " + widgets[x].id);
 			this.attachFlag(widgets[x]);
 		}
 	}
@@ -35,7 +35,7 @@ function MetricsFlagger (){
 	}
 	
 	this.attachFlag = function(containerDomElement){
-		this.logMessage("attaching to dom element" +containerDomElement);
+		this.logMessage("attaching to dom element" +containerDomElement.id);
 	}
 	
 	this.logMessage = function(message){
