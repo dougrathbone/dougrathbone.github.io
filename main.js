@@ -19,11 +19,11 @@ function MetricsFlagger (){
 		var widgetList = [];
 		
 		// Search through our widget list looking for the id's of all the containers.
-		for(var x = 0; x< widgetIdList.length;x++){
+		for(var x = 0; x< this.widgetIdList.length;x++){
 			// try and pull the contain from the current DOM
-			var widgetContainer = document.getElementById(widgetIdList[x]);
+			var widgetContainer = document.getElementById(this.widgetIdList[x]);
 			if (typeof widgetContainer == 'undefined'){
-				this.logMessage("Found element '"+widgetIdList[x]+"'");
+				this.logMessage("Found element '"+this.widgetIdList[x]+"'");
 				widgetList.push(widgetContainer);
 			}
 		}
