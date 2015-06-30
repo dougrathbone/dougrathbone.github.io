@@ -45,5 +45,7 @@ function MetricsFlagger (){
 MetricsFlagger.prototype.initialize = function(){
 	this.loadFlags();
 }
+console.log("initializing main proto");
 var flagApp = new MetricsFlagger();
 flagApp.initialize();
+console.log("finished initializing");
