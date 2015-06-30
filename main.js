@@ -44,7 +44,7 @@ function MetricsFlagger (){
 		flagIcon.src = this.flagiconSrc;
 		flagIcon.style.position = "absolute";
 		flagIcon.style.top = top+10+"px";
-		flagIcon.style.left = rightCorner-10+"px";
+		flagIcon.style.left = rightCorner-22+"px";
 		
 		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
