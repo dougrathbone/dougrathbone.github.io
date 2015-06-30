@@ -1,6 +1,7 @@
 function MetricsFlagger (){
 	this.loaded = false;
 	this.widgetIdList = ['Scorecard','odr','rcmd'];
+	this.flagiconSrc = "https://s3-us-west-2.amazonaws.com/edp-icons/not-flagged.png";
 	
 	this.loadFlags = function(){
 		if (this.loaded===true) {
@@ -11,7 +12,6 @@ function MetricsFlagger (){
 		var widgets = this.findWidgets();
 		this.logMessage("attempting to fetch "+widgets.length+" widgets");
 		for (var x = 0; x<widgets.length;x++){
-			this.logMessage("attaching to widget " + widgets[x].id);
 			this.attachFlag(widgets[x]);
 		}
 	}
@@ -36,6 +36,16 @@ function MetricsFlagger (){
 	
 	this.attachFlag = function(containerDomElement){
 		this.logMessage("attaching to dom element" +containerDomElement.id);
+		
+		var top = containerDomElement.offsetTop;
+		var rightCorner = containDomElement.offsetLeft + containDomElement.offsetWidth;
+		this.logMessage("element is at top: "+top+" and right: "+rightCorner);
+		
+		var flagIcon = document.createElement("img");
+		flagIcon.src = this.flagiconSrc;
+		flagIcon.style="position:absolute; top:"+(top+10)+"px;left:"+rightcorner-10+"px;";
+		
+		containerDomElement.insertBefore(flagIcon, containerDomElement.firstChild);
 	}
 	
 	this.logMessage = function(message){
