@@ -21,6 +21,12 @@ function MetricsFlagger (){
 		for (var x = 0; x<widgets.length;x++){
 			this.attachFlag(widgets[x]);
 		}
+		
+		//load dialog injection div
+		var dialogContainer = document.createElement("div");
+		dialogContainer.setAttribute("id","flagDialog");
+		var body = document.getElementByTagName("body")[0];
+		body.appendChild(dialogContainer);
 	}
 	
 	this.findWidgets = function(){
@@ -68,3 +74,15 @@ console.log("initializing main proto");
 var flagApp = new MetricsFlagger();
 flagApp.initialize();
 console.log("finished initializing");
+
+$("#targetDiv").dialog({  //create dialog, but keep it closed
+   autoOpen: false,
+   height: 300,
+   width: 350,
+   modal: true
+});
+
+function showDialog(url){  //load content and open dialog
+    $("#targetDiv").load(url);
+    $("#targetDiv").dialog("open");         
+}
