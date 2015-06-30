@@ -1,6 +1,6 @@
 function MetricsFlagger (){
-	var loaded = false;
-	var widgetIdList = ['Scorecard','odr','rcmd'];
+	this.loaded = false;
+	this.widgetIdList = ['Scorecard','odr','rcmd'];
 	
 	this.loadFlags = function(){
 		if (loaded===true) {
