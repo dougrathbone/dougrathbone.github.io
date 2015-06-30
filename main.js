@@ -23,7 +23,6 @@ function MetricsFlagger (){
 		for(var x = 0; x< this.widgetIdList.length;x++){
 			// try and pull the contain from the current DOM
 			var widgetContainer = document.getElementById(this.widgetIdList[x]);
-			console.log(widgetContainer);
 			if (widgetContainer == null){
 				this.logMessage("Found element '"+this.widgetIdList[x]+"'");
 				continue;
@@ -35,7 +34,7 @@ function MetricsFlagger (){
 	}
 	
 	this.attachFlag = function(containerDomElement){
-		this.logMessage("attaching to dom element" +containerDomElement.id);
+		this.logMessage("attaching to dom element: " +containerDomElement.id);
 		
 		var top = containerDomElement.offsetTop;
 		var rightCorner = containDomElement.offsetLeft + containDomElement.offsetWidth;
