@@ -1,2 +1,2 @@
-.flagIcon {width:12px;height:11px;}
+.flagIcon {width: 12px !important;height: 11px !important;}
 .flagIcon:hover {cursor: pointer;content: url('https://s3-us-west-2.amazonaws.com/edp-icons/not-flagged-hover.png');}
