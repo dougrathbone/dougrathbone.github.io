@@ -1,5 +1,5 @@
 function MetricsFlagger (){
-	var loaded =false;
+	var loaded = false;
 	var widgetIdList = ['Scorecard','odr','rcmd'];
 	
 	this.loadFlags = function(){
@@ -35,10 +35,15 @@ function MetricsFlagger (){
 	}
 	
 	this.logMessage = function(message){
-		if (typeof console == "object") return;
+		if (typeof console == "object") {
+			return;
+		}
 		
 		console.log(message);
 	}
 }
+MetricsFlagger.prototype.initialize = function(){
+	this.loadFlags();
+}
 var flagApp = new MetricsFlagger();
-flagApp.loadFlags();
+flagApp.initialize();
