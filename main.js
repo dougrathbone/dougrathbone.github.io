@@ -75,14 +75,15 @@ var flagApp = new MetricsFlagger();
 flagApp.initialize();
 console.log("finished initializing");
 
-$("#targetDiv").dialog({  //create dialog, but keep it closed
-   autoOpen: false,
-   height: 300,
-   width: 350,
-   modal: true
+$("#flagDialog").dialog({  //create dialog, but keep it closed
+	autoOpen: false,
+	height: 300,
+	width: 350,
+	modal: true
 });
 
 function showDialog(url){  //load content and open dialog
-    $("#targetDiv").load(url);
-    $("#targetDiv").dialog("open");         
+	var flagModalUrl = "https://dougrathbone.github.io/flagdialog.htm";
+	$("#flagDialog").load(flagModalUrl);
+	$("#flagDialog").dialog("open");         
 }
