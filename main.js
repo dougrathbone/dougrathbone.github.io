@@ -79,7 +79,8 @@ $("#flagDialog").dialog({  //create dialog, but keep it closed
 	autoOpen: false,
 	height: 300,
 	width: 350,
-	modal: true
+	modal: true,
+	title: "Flag metric for review"
 });
 
 function showDialog(){  //load content and open dialog
