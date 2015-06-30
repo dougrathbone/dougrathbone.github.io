@@ -35,10 +35,6 @@ function MetricsFlagger (){
 	}
 	
 	this.logMessage = function(message){
-		if (typeof console == "object") {
-			return;
-		}
-		
 		console.log(message);
 	}
 }
