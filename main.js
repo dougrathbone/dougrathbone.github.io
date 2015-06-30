@@ -84,7 +84,7 @@ $("#flagDialog").dialog({  //create dialog, but keep it closed
 });
 
 function showDialog(){  //load content and open dialog
-	var flagModalUrl = "https://dougrathbone.github.io/flagdialog.htm";
+	var flagModalUrl = "https://dougrathbone.github.io/flagDialog.htm";
 	$("#flagDialog").load(flagModalUrl);
 	$("#flagDialog").dialog("open");         
 }
