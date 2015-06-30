@@ -3,7 +3,7 @@ function MetricsFlagger (){
 	this.widgetIdList = ['Scorecard','odr','rcmd'];
 	
 	this.loadFlags = function(){
-		if (loaded===true) {
+		if (this.loaded===true) {
 			this.logMessage("skipping load, as already loaded");
 			return;
 		}
